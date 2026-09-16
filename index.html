@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VitalPeak Campaign Email</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
+<style>
+  :root{
+    --paper:#ffffff; --ground:#f6f7f8; --ink:#15181c; --body:#2b3138; --muted:#767f89;
+    --line:#e4e7ea; --line2:#eef0f2; --accent:#3e7d3b; --accentInk:#2f5f2d; --tint:#f3f8f2;
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,"Segoe UI","Inter",system-ui,Arial,sans-serif;
+    --mono:"Consolas","SF Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ground);color:var(--body);font-family:var(--sans);font-size:15px;line-height:1.55}
+  .wrap{max-width:1180px;margin:0 auto;padding:30px 22px 60px}
+
+  .topbar{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px}
+  .topbar b{color:var(--accentInk);font-weight:500}
+
+  .card{background:var(--paper);border:1px solid var(--line);margin-bottom:26px}
+
+  .hd{display:flex;align-items:flex-start;gap:14px;padding:20px 24px;border-bottom:1px solid var(--line)}
+  .tag{background:var(--ink);color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;
+    letter-spacing:1px;padding:4px 8px;margin-top:5px}
+  .hd h1{font-family:var(--serif);font-size:30px;font-weight:400;line-height:1.15;letter-spacing:-.2px;color:var(--ink)}
+  .hd .when{font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--muted);margin-top:6px}
+  .kind{margin-left:auto;flex:none;border:1px solid var(--accent);color:var(--accentInk);border-radius:20px;
+    font-family:var(--mono);font-size:10px;letter-spacing:1.3px;text-transform:uppercase;padding:6px 14px}
+
+  .meta3{display:grid;grid-template-columns:1fr 1fr 1.2fr;border-bottom:1px solid var(--line);background:var(--tint)}
+  .meta3>div{padding:15px 22px;border-right:1px solid var(--line)}
+  .meta3>div:last-child{border-right:none}
+  .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--accentInk);display:block;margin-bottom:5px}
+  .meta3 .ang{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
+
+  .subs{padding:16px 22px 18px;border-bottom:1px solid var(--line)}
+  .subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);margin-top:9px}
+  .subgrid>div{padding:13px 16px;border-right:1px solid var(--line);display:flex;gap:11px}
+  .subgrid>div:last-child{border-right:none}
+  .v{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--accentInk);flex:none;line-height:1.2}
+  .sj{font-size:14.5px;color:var(--ink);display:block;margin-bottom:3px}
+  .pv{font-size:13px;color:var(--muted);display:block}
+  .retell{padding:12px 22px;border-bottom:1px solid var(--line);background:var(--tint);
+    display:flex;gap:14px;align-items:baseline}
+  .retell i{font-family:var(--serif);font-style:italic;font-size:15.5px;color:var(--ink)}
+
+  .body2{display:grid;grid-template-columns:270px 1fr}
+  .left{padding:22px;border-right:1px solid var(--line)}
+  .right{padding:22px 24px}
+
+  .phone{border:1px solid var(--line);background:var(--paper)}
+  .phone .bar{height:5px;background:var(--line2);margin:7px auto 0;width:52px;border-radius:3px}
+  .phone .lg{display:flex;justify-content:center;align-items:center;gap:9px;padding:10px 12px 12px}
+  .phone .lg span:first-child{font-family:var(--serif);font-size:12.5px;letter-spacing:2px;color:var(--ink)}
+  .seal{background:var(--accent);color:#fff;font-family:var(--mono);font-size:8.5px;letter-spacing:.8px;padding:2px 6px}
+  .sk{padding:0 12px 10px;text-align:center}
+  .sk i{display:block;background:var(--ink);height:8px;margin-bottom:5px;border-radius:1px}
+  .sk i.s{width:72%;margin-left:auto;margin-right:auto} .sk i.t{width:56%;margin-left:auto;margin-right:auto}
+  .sk u{display:block;background:var(--line2);height:5px;margin-bottom:4px;border-radius:1px;text-decoration:none}
+  .sk u.a{width:88%;margin:0 auto 4px} .sk u.b{width:66%;margin:0 auto 9px}
+  .pill{background:var(--accent);height:13px;border-radius:9px;width:62%;margin:0 auto 11px}
+  .imgbox{border:1px solid var(--line);background:repeating-linear-gradient(45deg,#f2f4f6 0 6px,#fff 6px 12px);
+    margin:0 12px 12px;padding:11px 9px;min-height:118px;display:flex;align-items:center;justify-content:center}
+  .imgbox p{font-family:var(--mono);font-size:8.5px;line-height:1.55;color:#5d666f;text-align:center}
+  .wcap{font-family:var(--mono);font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;
+    color:var(--muted);text-align:center;margin:10px 0 18px}
+  .keymsg{border-top:1px solid var(--line);padding-top:13px}
+  .keymsg p{font-size:13.5px;color:var(--body)}
+
+  .blk{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--line2)}
+  .blk:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .bh{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+  .num{width:20px;height:20px;border-radius:50%;background:var(--tint);border:1px solid var(--accent);
+    color:var(--accentInk);font-family:var(--mono);font-size:10px;display:flex;align-items:center;justify-content:center}
+  .bh b{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink);font-weight:700}
+  .note{font-style:italic;font-size:13.5px;color:var(--muted);margin:0 0 14px 30px}
+
+  .row{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:5px 0;align-items:baseline}
+  .role{font-family:var(--mono);font-size:9.5px;letter-spacing:1.1px;text-transform:uppercase;
+    color:var(--accentInk);padding-top:3px}
+  .txt{font-size:15px;color:var(--ink)}
+  .txt em{font-style:italic}
+  .cta{display:inline-block;background:var(--accent);color:#fff;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:1.4px;text-transform:uppercase;padding:8px 18px;border-radius:20px}
+  .attrib{font-size:15px;color:var(--ink)}
+  .stars{color:var(--accent);letter-spacing:2px}
+
+  .vis{border-top:1px solid var(--line2);margin-top:12px;padding-top:10px}
+  .vis .row{grid-template-columns:96px 1fr}
+  .vis .txt{font-size:14px;color:var(--body)}
+
+  .fio{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:var(--tint);margin-top:12px}
+  .fio>div{padding:11px 14px;border-right:1px solid var(--line)}
+  .fio>div:last-child{border-right:none}
+  .fio p{font-size:13.5px;color:var(--body)}
+
+  .foot{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.9;
+    border-top:1px solid var(--line);padding-top:16px;margin-top:6px}
+  .flag{background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--accent);
+    padding:14px 18px;margin-bottom:26px;font-size:14px}
+  .flag b{color:var(--ink)}
+
+  @media screen and (max-width:860px){
+    .meta3,.subgrid,.fio,.body2{grid-template-columns:1fr}
+    .meta3>div,.subgrid>div,.fio>div{border-right:none;border-bottom:1px solid var(--line)}
+    .left{border-right:none;border-bottom:1px solid var(--line)}
+    .row{grid-template-columns:1fr;gap:2px}
+    .hd{flex-wrap:wrap}.kind{margin-left:0}
+  }
+  @page{size:A4 landscape;margin:11mm}
+  @media print{
+    body{background:#fff;font-size:12.5px;line-height:1.45}
+    .wrap{max-width:none;padding:0}
+    .blk,.fio,.subgrid,.phone,.row{break-inside:avoid}
+    .hd h1{font-size:25px}
+    .body2{grid-template-columns:238px 1fr}
+    .row{padding:3px 0}
+    .txt{font-size:12.5px}
+    .vis .txt,.fio p{font-size:11.5px}
+    .flag{font-size:12px}
+    a{text-decoration:none;color:inherit}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <span>Creative Brief · Part 3</span>
+  <span>VitalPeak Nutrition · <b>Campaign email</b> · Gabriel Braga Marchió</span>
+</div>
+
+<div class="flag">
+<b>Two notes before the frame.</b> The quotes below are placeholders with the attribution format
+specified, to be swapped for real pulled reviews before build. And the mushroom line assumes the
+immune blend is mushroom-based: if it isn't, the same email runs on whatever the ingredient a parent
+would hesitate over actually is, because the angle is the hesitation and not the mushroom.
+</div>
+
+<div class="card">
+
+  <div class="hd">
+    <span class="tag">C2</span>
+    <div>
+      <h1>Your kid doesn't have to like mushrooms</h1>
+      <div class="when">Campaign · single send · subscriber base and list</div>
+    </div>
+    <span class="kind">Testimonial quote</span>
+  </div>
+
+  <div class="meta3">
+    <div><span class="lab">Concept</span>Personal and specific lines, borrowed proof first</div>
+    <div><span class="lab">Trigger</span>Scheduled send, no segment condition</div>
+    <div><span class="lab">The one angle</span><span class="ang">Your kid doesn't have to like mushrooms. They have to finish the bottle.</span></div>
+  </div>
+
+  <div class="subs">
+    <span class="lab">Subjects</span>
+    <div class="subgrid">
+      <div><span class="v">A</span><div><span class="sj">My daughter hates mushrooms</span><span class="pv">Her mum's words, not ours. She isn't even our customer.</span></div></div>
+      <div><span class="v">B</span><div><span class="sj">Does your kid have to like it?</span><span class="pv">Short answer, and it didn't come from us.</span></div></div>
+      <div><span class="v">C</span><div><span class="sj">"She hates mushrooms and takes these every morning"</span><span class="pv">Nineteen parents opened their review the same way.</span></div></div>
+    </div>
+  </div>
+
+  <div class="retell">
+    <span class="lab" style="flex:none;margin:0">Retell test</span>
+    <i>"It's the immune one for kids who'd never eat a mushroom. Even the mum who says her daughter hates them calls it the way in."</i>
+  </div>
+
+  <div class="body2">
+
+    <div class="left">
+      <div class="phone">
+        <div class="bar"></div>
+        <div class="lg"><span>VITALPEAK</span><span class="seal">CAMPAIGN</span></div>
+        <div class="sk">
+          <i class="s"></i><i class="t"></i>
+          <u class="a"></u><u class="b"></u>
+          <div class="pill"></div>
+        </div>
+        <div class="imgbox"><p>Lifestyle, photographic. A child's hand putting the bottle back on the counter after taking one, parent soft behind. CTA pill above the image, no badge strip up top.</p></div>
+      </div>
+      <div class="wcap">Block 1 · above the fold</div>
+      <div class="keymsg">
+        <span class="lab">Key message</span>
+        <p>Your kid doesn't have to like mushrooms to finish the bottle: a parent on somebody else's review wall says her daughter hates them and takes them anyway, and VitalPeak's own parents only ever talk about whether it goes down without a fight.</p>
+      </div>
+    </div>
+
+    <div class="right">
+
+      <div class="blk">
+        <div class="bh"><span class="num">1</span><b>Header</b></div>
+        <p class="note">Logo, headline, subtext, CTA above the image. No kicker. Everything above the fold.</p>
+        <div class="row"><span class="role">Logo bar</span><span class="txt">VITALPEAK</span></div>
+        <div class="row"><span class="role">Headline</span><span class="txt">Your kid doesn't have to like mushrooms.</span></div>
+        <div class="row"><span class="role">Subhead</span><span class="txt">They have to <b>finish the bottle.</b> No child has ever asked what was in it.</span></div>
+        <div class="row"><span class="role">CTA</span><span class="txt"><span class="cta">See how it goes down</span></span></div>
+        <div class="vis">
+          <div class="row"><span class="role">Visual</span><span class="txt">Lifestyle, photographic, no cut-outs. A child's hand putting the bottle back on a real kitchen counter after taking one, mid-morning, parent soft and out of focus behind.</span></div>
+          <div class="row"><span class="role">Build</span><span class="txt">CTA pill above the image. No kicker: the first quote isn't ours and any line above the headline would claim it is. No badge strip up top either, it pushes the hero off the first screen on a phone.</span></div>
+        </div>
+        <div class="fio">
+          <div><span class="lab">Feeling</span><p>An ordinary weekday morning, nothing performed.</p></div>
+          <div><span class="lab">Idea</span><p>A habit, not a supplement round.</p></div>
+          <div><span class="lab">Objective</span><p>She pictures a morning nobody had to negotiate, before she reads the word mushroom.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="bh"><span class="num">2</span><b>Bridge</b></div>
+        <p class="note">No greeting. The objective title, then the quote that does the work, then the count, then out.</p>
+        <div class="row"><span class="role">Headline</span><span class="txt">We didn't write this one.</span></div>
+        <div class="row"><span class="role">Stars</span><span class="txt stars">★★★★★</span></div>
+        <div class="row"><span class="role">Quote</span><span class="txt"><em>"My daughter hates mushrooms. She has no idea they're in here and she asks for it."</em></span></div>
+        <div class="row"><span class="role">Attribution</span><span class="attrib"><b>Rachel M.</b> · another brand's customer, not ours</span></div>
+        <div class="row"><span class="role">Body</span><span class="txt">That sentence turns up in <b>19 reviews</b> on that wall. Her daughter never came around on mushrooms. She came around on <b>the gummy.</b></span></div>
+        <div class="row"><span class="role">CTA</span><span class="txt"><span class="cta">See the flavours</span></span></div>
+        <div class="vis">
+          <div class="row"><span class="role">Visual</span><span class="txt">Split block, live text one side and product the other. Not a card, not a screenshot. Five stars above the quote, single bottle shot straight on, neutral ground, morning light.</span></div>
+          <div class="row"><span class="role">Build</span><span class="txt">The attribution line is not a footnote. Full body size, never greyed, never smaller than the quote: it's what makes the block honest, and shrinking it is the one edit that breaks this email. Quote in italic with <em>hates mushrooms</em> at display size. No card and no quotation-mark ornament, because block 3 owns the card module.</span></div>
+        </div>
+        <div class="fio">
+          <div><span class="lab">Feeling</span><p>A note another parent wrote, pinned up honestly, including the part where it isn't about us.</p></div>
+          <div><span class="lab">Idea</span><p>The most useful sentence in this category was written by somebody who doesn't buy from us.</p></div>
+          <div><span class="lab">Objective</span><p>Earn the first-party quotes below by showing we didn't need to fake this one.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="bh"><span class="num">3</span><b>Value module</b></div>
+        <p class="note">The one device in this email: social proof, built as the card-over-photograph module.</p>
+        <div class="row"><span class="role">Headline</span><span class="txt">So what do our parents say?</span></div>
+        <div class="row"><span class="role">Subhead</span><span class="txt">Three of them, and they're all about the same thing: whether it goes down without a fight.</span></div>
+        <div class="row"><span class="role">Quote 1</span><span class="txt"><em>"No negotiation at breakfast. That's all I wanted."</em><br>Priya · VitalPeak parent · 5★</span></div>
+        <div class="row"><span class="role">Quote 2</span><span class="txt"><em>"He takes them before I've finished asking."</em><br>Marcus T. · VitalPeak parent · 5★</span></div>
+        <div class="row"><span class="role">Quote 3</span><span class="txt"><em>"We've tried four of these. It's the first that didn't end up at the back of a cupboard."</em><br>Hannah L. · VitalPeak parent · 5★</span></div>
+        <div class="row"><span class="role">CTA</span><span class="txt"><span class="cta">Start their morning</span></span></div>
+        <div class="vis">
+          <div class="row"><span class="role">Visual</span><span class="txt">Three white cards over one continuous kitchen-counter photograph running behind all three. A small object breaks each card's top edge: the bottle, a single gummy, the wall chart. Three mornings, not a quote carousel.</span></div>
+          <div class="row"><span class="role">Build</span><span class="txt">Generous radius, thin hairline. Names and the 5★ at attribution size, never greyed. Hannah's is the long quote, so set the row to its height. No star average, no review totals, no invented seals.</span></div>
+        </div>
+        <div class="fio">
+          <div><span class="lab">Feeling</span><p>Notes pinned to a fridge.</p></div>
+          <div><span class="lab">Idea</span><p>Every parent who actually uses it talks about one thing, and it isn't the ingredient list.</p></div>
+          <div><span class="lab">Objective</span><p>Proof by whether it actually gets taken, entirely from our own parents, right after a quote that wasn't.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="bh"><span class="num">4</span><b>Reinforcement</b></div>
+        <p class="note">A lighter angle on the same decision, with its own CTA. Prose, not a grid.</p>
+        <div class="row"><span class="role">Headline</span><span class="txt">Start with BERRY.</span></div>
+        <div class="row"><span class="role">Body</span><span class="txt">It's the one that tastes least like a decision. If berry isn't their thing, ORANGE and VANILLA are right there.</span></div>
+        <div class="row"><span class="role">CTA</span><span class="txt"><span class="cta">Pick their flavour</span></span></div>
+        <div class="vis">
+          <div class="row"><span class="role">Visual</span><span class="txt">Three bottles in a row in the same morning light, BERRY front and slightly forward.</span></div>
+          <div class="row"><span class="role">Build</span><span class="txt">Not a product grid: no cards, no prices, no badges on the bottles, one photograph.</span></div>
+        </div>
+        <div class="fio">
+          <div><span class="lab">Feeling</span><p>Choosing a flavour, not a formula.</p></div>
+          <div><span class="lab">Idea</span><p>The only decision left is which one they'll actually take.</p></div>
+          <div><span class="lab">Objective</span><p>Turn the permission into a click.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <div class="bh"><span class="num">5</span><b>Footer</b></div>
+        <p class="note">The obvious conclusion, permission at the close, one button, founder sign-off.</p>
+        <div class="row"><span class="role">Headline</span><span class="txt">And if they won't take them, you're not stuck with it.</span></div>
+        <div class="row"><span class="role">Body</span><span class="txt">One bottle, thirty mornings, and <b>sixty days</b> to change your mind.</span></div>
+        <div class="row"><span class="role">CTA</span><span class="txt"><span class="cta">Choose their flavour</span></span></div>
+        <div class="row"><span class="role">P.S.</span><span class="txt">I have two at home. The whole job was making something they'd finish without me standing there.</span></div>
+        <div class="row"><span class="role">Sign-off</span><span class="txt">The VitalPeak team</span></div>
+        <div class="row"><span class="role">Trust strip</span><span class="txt">THIRD-PARTY LAB TESTED · GMP FACILITY · NO ARTIFICIAL COLOURS</span></div>
+        <div class="vis">
+          <div class="row"><span class="role">Visual</span><span class="txt">Still on a photographic ground, never flat white. Bottle on a wooden counter in morning light, lid off, two gummies beside it. No props, no hands.</span></div>
+          <div class="row"><span class="role">Build</span><span class="txt">Guarantee as a small hairline roundel at the edge of frame, not centred. No countdown, no timer, no percentage anywhere. Nothing in this block makes a health or growth claim, and the trust strip carries certifications only.</span></div>
+        </div>
+        <div class="fio">
+          <div><span class="lab">Feeling</span><p>An open hand.</p></div>
+          <div><span class="lab">Idea</span><p>You can put it down and it costs you nothing.</p></div>
+          <div><span class="lab">Objective</span><p>Close on permission, not pressure.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+Gabriel Braga Marchió · Retention Strategist assessment for Laya Consulting · Part 3, campaign email<br>
+Copy across the five blocks: 244 words, inside the 100 to 250 brief
+</div>
+
+</div>
+</body>
+</html>
